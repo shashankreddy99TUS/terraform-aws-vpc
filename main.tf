@@ -28,7 +28,7 @@ resource "aws_internet_gateway" "main" {
 
 
 # expense-dev-public-us-east-1a
-resource "aws_subnet" "main" {
+resource "aws_subnet" "public" {
   count = length(var.public_subnet_cidrs)
   vpc_id     = aws_vpc.main.id
   cidr_block = var.public_subnet_cidrs[count.index]
